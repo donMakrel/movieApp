@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title [style.font-size]="titleFontSize">Trending Movies</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/settings']">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let item of movies" [routerLink]="[item.id]">
+      <ion-avatar slot="start">
+        <img [src]="imageBaseUrl + '/w92' + item.poster_path">
+      </ion-avatar>
+      <ion-label [style.font-size]="titleFontSize" color="favorite-warning"> {{ item.title }}
+        <p [style.font-size]="titleFontSize">{{ item.release_date | date:'y'}} </p>
+      </ion-label>
+      <ion-badge [style.font-size]="titleFontSize" color="favorite" slot="end">{{ item.vote_average }}</ion-badge>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMore($any($event))">
+    <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

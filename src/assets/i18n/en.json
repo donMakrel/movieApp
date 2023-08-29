@@ -1,0 +1,17 @@
+{
+    "tab1": {
+        "tabName": "Settings",
+        "invite": "Now you have selected: {{lang}}",
+        "tabDark": "Dark",
+        "tabLight": "Light",
+        "tabWarning": "Warning",
+        "tabColor": "Color Theme",
+        "tabLanguage": "Language",
+        "tabTrending": "Trending Movies",
+        "tabFont": "Font",
+        "tabSmall": "Small",
+        "tabMedium": "Medium",
+        "tabBig": "Big"
+
+      }
+  }

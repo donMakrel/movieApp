@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title [style.font-size]="'var(--font-size-' + selectedFontSize + ')'"> {{ 'tab1.tabName' | translate }}</ion-title>
+    <ion-back-button slot="start" defaultHref="/movies"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+   <ion-row>
+     <ion-col size="12">
+       <ion-item>
+         <ion-label class="ion-text-center" [style.font-size]="'var(--font-size-' + selectedFontSize + ')'">{{ 'tab1.tabColor' | translate }}
+         <ion-segment (ionChange)="onColorThemeChanged($event)">
+           <ion-segment-button value="dark" [style.font-size]="'var(--font-size-' + selectedFontSize + ')'">
+            {{ 'tab1.tabDark' | translate }}
+           </ion-segment-button>
+           <ion-segment-button value="light" [style.font-size]="'var(--font-size-' + selectedFontSize + ')'">
+            {{ 'tab1.tabLight' | translate }}
+           </ion-segment-button>
+           <ion-segment-button value="warning" [style.font-size]="'var(--font-size-' + selectedFontSize + ')'">
+            {{ 'tab1.tabWarning' | translate }}
+           </ion-segment-button>
+         </ion-segment>
+        </ion-label>
+      </ion-item>
+      <ion-card-content>
+        <p translate [translateParams]="{ lang: language }" [style.font-size]="'var(--font-size-' + selectedFontSize + ')'">tab1.invite</p>
+        <ion-item> 
+          <ion-label [style.font-size]="'var(--font-size-' + selectedFontSize + ')'" translate>{{ 'tab1.tabLanguage' | translate }}</ion-label>
+          <ion-select [style.font-size]="'var(--font-size-' + selectedFontSize + ')'" [(ngModel)]='language' (ionChange)='languageChange()' [placeholder]='"Choose Language" | translate'>
+            <ion-select-option value='pl'>Polish</ion-select-option>
+            <ion-select-option value='en'>English</ion-select-option>
+          </ion-select>
+        </ion-item> 
+      </ion-card-content>
+      <ion-item>
+        <ion-label class="ion-text-center" [style.font-size]="'var(--font-size-' + selectedFontSize + ')'">{{ 'tab1.tabFont' | translate }}
+        <ion-segment (ionChange)="onFontSizeChanged($event)">
+          <ion-segment-button [style.font-size]="'var(--font-size-' + selectedFontSize + ')'" value="small">{{ 'tab1.tabSmall' | translate }}</ion-segment-button>
+          <ion-segment-button [style.font-size]="'var(--font-size-' + selectedFontSize + ')'" value="medium">{{ 'tab1.tabMedium' | translate }}</ion-segment-button>
+          <ion-segment-button [style.font-size]="'var(--font-size-' + selectedFontSize + ')'" value="big">{{ 'tab1.tabBig' | translate }}</ion-segment-button>
+        </ion-segment>
+      </ion-label>
+      </ion-item>
+     </ion-col>
+   </ion-row>
+  </ion-grid>
+ </ion-content>

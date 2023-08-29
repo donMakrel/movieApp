@@ -1,0 +1,17 @@
+{
+    "tab1": {
+        "tabName": "Ustawienia",
+        "invite": "Właśnie wybrałeś język: {{lang}}",
+        "tabDark": "Ciemny",
+        "tabLight": "Jasny",
+        "tabWarning": "Kontrast",
+        "tabColor": "Motyw Koloru",
+        "tabLanguage": "Język",
+        "tabTrending": "Popularne filmy",
+        "tabFont": "Czcionka",
+        "tabSmall": "Mały",
+        "tabMedium": "Średni",
+        "tabBig": "Duży"
+
+      }
+  }
